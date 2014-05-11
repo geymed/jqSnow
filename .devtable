@@ -1,0 +1,18 @@
+// This is a DevTable project configuration file. This file is responsible
+// for configuring the different analysis, build, and deploy engines. You
+// can find more information about how to modify this file in the DevTable
+// documentation at https://devtable.com/docs/
+
+profile = DevTable.Profile(
+	Analyze = [closure],
+	Debug = [runfile]
+)
+
+closure = Google.Closure(
+	Files = Glob('*.js')
+)
+
+runfile = DevTable.RunFile(
+	FileSet = ProjectFiles(),
+	File = 'SnowFlakes.html'
+)
